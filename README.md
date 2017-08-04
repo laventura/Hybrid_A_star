@@ -8,3 +8,30 @@ Modify the code in 'hybrid_breadth_first.cpp' and hit Test Run to check your res
 Note the number of expansions required to solve an empty 15x15 grid (it should be about 18,000!). Modify the code to try to reduce that number. How small can you get it?
 
 ## Results
+
+#### Using Heuristics
+
+Using a simple heuristic function **absolute distance from goal**, we can reduce teh number of expansions down to 9069.
+
+```
+Finding path through grid:
+  GOAL is: (15, 15)
+0,1,1,0,0,0,0,0,0,0,1,1,0,0,0,0
+0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0
+0,1,1,0,0,0,0,0,1,1,0,0,0,0,0,0
+0,1,1,0,0,0,0,1,1,0,0,0,1,1,1,0
+0,1,1,0,0,0,1,1,0,0,0,1,1,1,0,0
+0,1,1,0,0,1,1,0,0,0,1,1,1,0,0,0
+0,1,1,0,1,1,0,0,0,1,1,1,0,0,0,0
+0,1,1,1,1,0,0,0,1,1,1,0,0,0,0,0
+0,1,1,1,0,0,0,1,1,1,0,0,0,0,0,0
+0,1,1,0,0,0,1,1,1,0,0,1,1,1,1,1
+0,1,0,0,0,1,1,1,0,0,1,1,1,1,1,1
+0,0,0,0,1,1,1,0,0,1,1,1,1,1,1,1
+0,0,0,1,1,1,0,0,1,1,1,1,1,1,1,1
+0,0,1,1,1,0,0,1,1,1,1,1,1,1,1,1
+0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+found path to goal in 9069 expansions
+```
+Full results are in ![output](output.txt)
