@@ -16,18 +16,19 @@ public:
 	double SPEED = 1.45;
 	double LENGTH = 0.5;
 
-	struct maze_s {
-	
+	struct maze_s { 
+    // State within the maze
 		int g;	// iteration
 		double x;
 		double y;
 		double theta;
+    double f;   // Total  cost = g + heuristic cost
 	};
 
 	struct maze_path {
 	
-		vector< vector< vector<maze_s> > > closed;
-		vector< vector< vector<maze_s> > > came_from;
+		vector< vector< vector<maze_s> > > closed;      // EXPLORED set
+		vector< vector< vector<maze_s> > > came_from;   // history
 		maze_s final;
 
 	};
@@ -48,7 +49,7 @@ public:
 
   int idx(double float_num);
 
-  vector<maze_s> expand(maze_s state);
+  vector<maze_s> expand(maze_s state, vector<int> goal, vector<vector<int> > grid);
 
   maze_path search(vector< vector<int> > grid, vector<double> start, vector<int> goal);
 
